@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "description": "Blippar JS test application",
+  "main": "main.js",
+  "blipp": {
+    "title": "Andrew Gottlieb Blipp",
+    "shortTitle": "code challenge"
+  },
+  "dependencies": {
+    "blippar": "1.4.6"
+  }
+}
