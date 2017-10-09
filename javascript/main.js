@@ -65,14 +65,14 @@ scene.onCreate = function() {
     scene.nextPage = scene.addText("Tap for more!")
         .setColor(1, 100, 200)
         .setFontSize(45)
-        .setTranslation(0, 350, 0)
+        .setTranslation(0, 350, 0);
 
     //3D model
     scene.cube = scene.addMesh("cube.md2")
         .setTextures(['face.jpg'])
         .setTranslation(0, 0, 0)
-        .setScale(3)
-    scene.cube.setActiveTexture(0)
+        .setScale(3);
+    scene.cube.setActiveTexture(0);
 
     //3D model text
     scene.cubeText = scene.addText("I'm a cube!")
@@ -133,15 +133,15 @@ scene1.onCreate = function() {
 
     //video preview setup
     scene1.videopreview = scene1.addSprite("video_preview.png")
-        .setScale(500, 400, 100)
+        .setScale(500, 400, 100);
     scene1.playbutton = scene1.addSprite("play_icon.png")
-        .setScale(200)
+        .setScale(200);
 
     //particle demo link
     scene1.particleText = scene1.addText("Tap me!")
         .setColor(100, 1, 150)
         .setFontSize(45)
-        .setTranslation(0, -350, 0)
+        .setTranslation(0, -350, 0);
 
     //video playback event listener
     scene1.videopreview.onTouchEnd = function(id, x, y) {
@@ -229,7 +229,7 @@ function slide(node, text) {
     text.animate()
         .alpha(alphaValue)
         .translationX(translationValue)
-        .duration(1000)
+        .duration(1000);
 }
 
 //particle effect animation
