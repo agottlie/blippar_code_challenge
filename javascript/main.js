@@ -13,6 +13,8 @@ blipp.getPeel()
 var scene1 = blipp.addScene("scene1");
 var scene = blipp.addScene("default");
 
+scene1.setRequiredAssets(["Blippar_FINAL.mp4", "Blippar_FINAL.mp3"]);
+
 
 
 //----------variable declarations-------------
