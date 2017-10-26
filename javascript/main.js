@@ -34,11 +34,11 @@ var start = true;
 //-----------main page scene creation-----------
 
 scene.onCreate = function() {
-    
+
     //variable resets
     position = 0;
     fromLeft = false;
-    
+
     //main title
     var title = scene.addText("Andrew Gottlieb")
         .setTranslationY(500)
@@ -46,26 +46,75 @@ scene.onCreate = function() {
         .setColor(240, 212, 101)
         .setFontSize(60)
         .setBgColor(50, 195, 36);
+    title.texture = title.addChild('Texture');
 
     //social icons
     var twitter = scene.addSprite("twitter.png")
         .setName("twitter")
         .setTranslation(0, -400, 150)
         .setScale(150);
+    var twitterBorder = scene.addSprite()
+        .setTranslation(23, -421, 150)
+        .setScale(200);
+    twitterBorder.texture = twitterBorder.addChild("Texture");
+    twitterBorder.onDraw = function() {
+        this.texture.setSize(200, 200);
+        this.texture.drawEllipse([0, 0, 200, 200],  [1, 0, 0, 1], true);
+        this.setTexture(this.texture.getName());
+
+        return 1;
+    }
+
     var github = scene.addSprite("github.png")
         .setName("github")
         .setTranslation(-200, -400, 150)
         .setScale(135);
+    var githubBorder = scene.addSprite()
+        .setTranslation(-179, -421, 150)
+        .setScale(200);
+    githubBorder.texture = githubBorder.addChild("Texture");
+    githubBorder.onDraw = function() {
+        this.texture.setSize(200, 200);
+        this.texture.drawEllipse([0, 0, 200, 200],  [1, 0, 0, 1], true);
+        this.setTexture(this.texture.getName());
+
+        return 1;
+    }
+
     var linkedin = scene.addSprite("linkedin.png")
         .setName("linkedin")
         .setTranslation(200, -400, 150)
         .setScale(150);
+    var linkedinBorder = scene.addSprite()
+        .setTranslation(223, -421, 150)
+        .setScale(200);
+    linkedinBorder.texture = linkedinBorder.addChild("Texture");
+    linkedinBorder.onDraw = function() {
+        this.texture.setSize(200, 200);
+        this.texture.drawEllipse([0, 0, 200, 200],  [1, 0, 0, 1], true);
+        this.setTexture(this.texture.getName());
+
+        return 1;
+    }
 
     //next page link
     scene.nextPage = scene.addText("Tap for more!")
         .setColor(1, 100, 200)
         .setFontSize(45)
         .setTranslation(0, 350, 0);
+
+    var plane1 = scene.addSprite()
+        .setTranslation(0, 350, 0)
+        .setScale(300, 75, 1);
+    plane1.texture = plane1.addChild('Texture');
+
+    plane1.onDraw = function() {
+        this.texture.setSize(32, 32);
+        this.texture.drawRect([0, 0, 32, 32], [1, 0, 0, 0.1]);
+        this.setTexture(this.texture.getName());
+
+        return 1;
+    }
 
     //3D model
     scene.cube = scene.addMesh("cube.md2")
@@ -116,7 +165,7 @@ scene.onCreate = function() {
 //---------secondary page scene creation------------
 
 scene1.onCreate = function() {
-    
+
     //main title
     var title = scene1.addText("PAGE 2")
         .setTranslationY(400)
